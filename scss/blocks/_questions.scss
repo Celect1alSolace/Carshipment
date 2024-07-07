@@ -45,16 +45,42 @@
 .questions__item + .questions__item {
   margin-top: 25px;
 }
-.questions__svg {
-  cursor: pointer;
-  &:hover > .remove-fill {
-    fill: none;
-  }
-}
+
 .questions__strong {
   font-family: Inter;
   font-size: 18px;
   font-weight: 600;
   line-height: 21.78px;
   color: var(--clr-black);
+}
+
+.questions__hide-content {
+  padding-top: 0;
+  height: 0;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+.questions__hide-text {
+  @include textStyle(
+    $FM: Inter,
+    $MB: 0px,
+    $FS: 16px,
+    $FW: 400,
+    $CLR: var(--clr-black),
+    $LH: 24px,
+    $CASE: none
+  );
+}
+
+.show{
+  padding-top: 13px;
+  height: 40px;
+  opacity: 1;
+}
+.questions__svg {
+  cursor: pointer;
+  &:hover > .remove-fill {
+    fill: none;
+  }
 }

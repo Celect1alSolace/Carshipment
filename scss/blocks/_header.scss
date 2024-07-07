@@ -15,10 +15,10 @@
   margin-left: 4vh;
   z-index: 1000;
   margin-top: 25px;
-  -webkit-transition: -webkit-transform 0.5s;
+  transition: all 0.3s linear;
   &:hover {
     cursor: pointer;
-    -webkit-transform: rotate(90deg) translateZ(0);
+    transform: rotate(90deg);
   }
   &:hover ~ .site-header {
     position: none;
@@ -108,30 +108,28 @@
   border: none;
 }
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include display($items: center, $space: space-between, $gap: 0);
 }
 .header__links-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 50px;
+  @include display($items: center, $space: none, $gap: 50px);
 }
 .header-logo {
   display: inline-block;
 }
 .header__list {
-  display: flex;
-  gap: 25px;
+  @include display($items: none, $space: none, $gap: 25px);
 }
 .nav__text {
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 19.36px;
-  color: var(--clr-white);
+  @include textStyle(
+    $FM: Inter,
+    $MB: 0,
+    $FS: 16px,
+    $FW: 500,
+    $CLR: var(--clr-white),
+    $LH: 19.36px,
+    $CASE: uppercase
+  );
   transition: all 0.3s linear;
-  text-transform: uppercase;
 
   &:hover {
     cursor: pointer;
@@ -139,9 +137,7 @@
   }
 }
 .header__phone-links {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  @include display($items: center, $space: none, $gap: 10px);
 
   & > svg > rect,
   & > svg > path {
@@ -159,10 +155,14 @@
   }
 }
 .header__span {
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 19.36px;
-  color: var(--clr-white);
+  @include textStyle(
+    $FM: Inter,
+    $MB: 0,
+    $FS: 16px,
+    $FW: 500,
+    $CLR: var(--clr-white),
+    $LH: 19.36px,
+    $CASE: none
+  );
   transition: all 0.3s linear;
 }

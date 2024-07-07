@@ -6,8 +6,7 @@
   height: 150vh;
 }
 .hero {
-  display: flex;
-  gap: 85px;
+  @include display($items: none, $space: none, $gap: 85px);
 }
 .hero__form {
   width: 449px;
@@ -25,27 +24,37 @@
   padding: 25px 0 20px 0;
 }
 .hero__subtitle {
-  margin-bottom: 8px;
-  font-family: Inter;
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 36.31px;
-  color: var(--clr-white);
+  @include textStyle(
+    $FM: Inter,
+    $MB: 8px,
+    $FS: 30px,
+    $FW: 700,
+    $CLR: var(--clr-white),
+    $LH: 36.31px,
+    $CASE: none
+  );
 }
 .hero__form-text {
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 19.36px;
-  color: var(--clr-white);
+  @include textStyle(
+    $FM: Inter,
+    $MB: 0,
+    $FS: 16px,
+    $FW: 400,
+    $CLR: var(--clr-white),
+    $LH: 19.36px,
+    $CASE: none
+  );
 }
 .hero__input-text {
-  margin-bottom: 8px;
-  font-family: Inter;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 18.15px;
-  color: var(--clr-white);
+  @include textStyle(
+    $FM: Inter,
+    $MB: 8px,
+    $FS: 15px,
+    $FW: 400,
+    $CLR: var(--clr-white),
+    $LH: 18.15px,
+    $CASE: none
+  );
   text-align: left;
 }
 .hero__input {
@@ -58,11 +67,15 @@
   background-color: var(--clr-fakewhite);
 }
 .hero__input::placeholder {
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 19.36px;
-  color: var(--clr-grblack);
+  @include textStyle(
+    $FM: Inter,
+    $MB: 0,
+    $FS: 16px,
+    $FW: 400,
+    $CLR: var(--clr-grwhite),
+    $LH: 19.36px,
+    $CASE: none
+  );
 }
 .hero__input:focus {
   box-shadow: 0 0 5px 1px var(--clr-orange);
@@ -73,7 +86,7 @@
   margin-top: 12px;
   z-index: 50;
 }
-.hero__svg-image > path{
+.hero__svg-image > path {
   fill: var(--clr-grblack);
 }
 .hero__label {
@@ -85,10 +98,7 @@
   margin-top: 15px;
 }
 .hero__radios {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
+  @include display($items: center, $space: center, $gap: 15px);
   border-bottom: 1px solid var(--clr-white);
   padding-bottom: 25px;
 }
@@ -137,26 +147,30 @@
 
 .hero__link {
   display: inline-block;
-  width: 399px;
   margin: 0 auto;
-  margin: 20px 0;
-  border: 2px solid var(--clr-orange);
-  border-radius: 10px;
-  background-color: var(--clr-orange);
-  padding: 17px;
   font-family: Inter;
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 20.57px;
+  margin: 20px 0;
   text-align: center;
-  color: var(--clr-white);
   transition: all 0.3s linear;
+
+  @include buttonStyle(
+    $BTN_W: 399px,
+    $BTN_PY: 17px,
+    $BTN_BG_CLR: var(--clr-orange),
+    $BTN_BR_Radius: 10px,
+    $BTN_Border_CLR: var(--clr-orange),
+    $BTN_FS: 17px,
+    $BTN_FW: 500,
+    $BTN_LH: 20.57px,
+    $BTN_CLR: var(--clr-white),
+    $BTN_CASE: none
+  );
 
   &:hover {
     cursor: pointer;
     background-color: transparent;
     color: var(--clr-orange);
-    border: 2px solid var(--clr-orange);
+    border: 2 px solid var(--clr-orange);
   }
 }
 .hero__texts-wrapper {
@@ -164,31 +178,39 @@
   margin-top: 43px;
 }
 .hero__star-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  @include display($items: center, $space: none, $gap: 10px);
   margin-bottom: 8px;
 }
 .hero__star-text {
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 16.94px;
-  color: var(--clr-white);
-  text-transform: uppercase;
+  @include textStyle(
+    $FM: Inter,
+    $MB: 0,
+    $FS: 14px,
+    $FW: 500,
+    $CLR: var(--clr-white),
+    $LH: 16.94px,
+    $CASE: uppercase
+  );
 }
 .site__title {
-  margin-bottom: 20px;
-  font-family: Inter;
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 67.77px;
-  color: var(--clr-white);
+  @include textStyle(
+    $FM: Inter,
+    $MB: 20px,
+    $FS: 56px,
+    $FW: 700,
+    $CLR: var(--clr-white),
+    $LH: 67.77px,
+    $CASE: none
+  );
 }
 .hero__text {
-  font-family: Inter;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24.2px;
-  color: var(--clr-white);
+  @include textStyle(
+    $FM: Inter,
+    $MB: 0,
+    $FS: 20px,
+    $FW: 400,
+    $CLR: var(--clr-white),
+    $LH: 24.2px,
+    $CASE: none
+  );
 }
